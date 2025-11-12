@@ -11,7 +11,7 @@ from spacy.matcher import PhraseMatcher
 from rapidfuzz import process, fuzz
 
 # ---------- Configuration ----------
-ARTICLE_FILE = "mitre.txt"
+ARTICLE_FILE = input('Enter PATH to txt file containing article text: ')
 SUMMARY_CSV = "extracted_ttp_summary.csv"
 MITRE_CTIS_URL = "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json"
 
