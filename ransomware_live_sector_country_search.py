@@ -87,7 +87,7 @@ class RasomwareLiveAPI():
         return response
 
 if __name__ == '__main__':
-    sector = 'healthcare'
+    sector = input('Enter sector here: e.g. healthcare, legal, etc. ')
     ransomware = RasomwareLiveAPI()
 
     uk_results = ransomware.ransomware_attack_sector_gb(sector=sector)

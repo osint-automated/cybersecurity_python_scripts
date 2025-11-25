@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 # -----------------------
-# 1. Load CSV from user input
+# 1. Load CSV from ransomware_live_victim_search_by_group.py output
 # -----------------------
 csv_path = input("Enter the path to the CSV file: ").strip()
 
