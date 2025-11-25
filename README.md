@@ -60,6 +60,50 @@ This script provides statistics on ransomware attacks, allowing you to query dat
 - **Statistical Analysis:** Get counts of ransomware incidents by industry sector or country.
 - **Trend Analysis:** Helps in understanding the distribution and focus of ransomware attacks.
 
+### 4. Infrastructure Analysis and Enumeration
+
+#### `asn_enumeration.py`
+
+This script enriches an IP address or CIDR block by providing ASN (Autonomous System Number) information from VirusTotal. It also flags IPs belonging to high-risk ASNs.
+
+**Features:**
+
+- **ASN Enrichment:** Retrieves ASN details, owner, and country for a given IP.
+- **High-Risk ASN Flagging:** Identifies IPs associated with commonly abused ASNs.
+- **CIDR Support:** Can enumerate all IPs within a CIDR range.
+
+#### `c2_infrastructure_clustering.py`
+
+This script attempts to find connections between different indicators of compromise (IOCs) by clustering them based on shared infrastructure attributes.
+
+**Features:**
+
+- **Passive DNS:** Links domains to IPs they have resolved to.
+- **WHOIS Correlation:** Connects domains that share the same registration email.
+- **SSL/TLS Certificate Reuse:** Clusters IPs that have used the same SSL/TLS certificates.
+
+### 5. CTI Reports and Visualization
+
+#### `ransomware_group_attack_analysis_for_cti_report.py`
+
+This script takes a CSV file of ransomware victims (generated from `ransomware_live_victim_search_by_group.py`) and generates a CTI (Cyber Threat Intelligence) report with statistics and visualizations.
+
+**Features:**
+
+- **Data Analysis:** Computes statistics on top ransomware groups, victim countries, and targeted industries.
+- **Temporal Analysis:** Analyzes attack timelines and detection delays.
+- **Visualization:** Creates and saves charts for attack trends, industry distribution, country distribution, group activity, and detection delay.
+
+#### `ransomware_sector_analysis_for_cti_report.py`
+
+This script provides a more detailed analysis of ransomware attack data from a CSV file, focusing on sector and country-specific trends.
+
+**Features:**
+
+- **In-depth Statistics:** Generates detailed metrics on attacks by group, country, and industry.
+- **Timeline Heatmap:** Creates a heatmap to visualize ransomware group activity over time.
+- **Customizable Plots:** Saves multiple plots for group, country, and industry distributions, as well as detection delay.
+
 ## Setup and Installation
 
 1.  **Clone the repository:**
@@ -95,6 +139,7 @@ This script provides statistics on ransomware attacks, allowing you to query dat
     abuseipdb_api_key="YOUR_ABUSEIPDB_API_KEY"
     alienvault_api_key="YOUR_ALIENVAULT_OTX_API_KEY"
     urlscan_io_api_key="YOUR_URLSCAN.IO_API_KEY"
+    virustotal_api_key="YOUR_VIRUSTOTAL_API_KEY"
     ```
 
 ## Usage
@@ -137,3 +182,25 @@ Run the scripts from your terminal, and they will prompt you for the required in
   ```bash
   python ransomwarelive_sector_country_search.py
   ```
+
+### Infrastructure Analysis and Enumeration
+
+- **Enumerate ASN information:**
+    ```bash
+    python asn_enumeration.py
+    ```
+- **Cluster Infrastructure:**
+    ```bash
+    python c2_infrastructure_clustering.py
+    ```
+
+### CTI Reports and Visualization
+
+- **Generate CTI report from ransomware data:**
+    ```bash
+    python ransomware_group_attack_analysis_for_cti_report.py
+    ```
+- **Generate sector-specific CTI report:**
+    ```bash
+    python ransomware_sector_analysis_for_cti_report.py
+    ```
