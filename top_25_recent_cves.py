@@ -58,17 +58,26 @@ def get_top_recent_cves(limit=10, days=30):
     cves = fetch_recent_cves(days)
     kev_set = fetch_cisa_kev()
 
-    scored = []
+    scored = {}
 
     for item in cves:
+        cve_id = item["cve"]["id"]
         score = compute_trend_score(item, kev_set)
-        scored.append((score, item))
 
-    scored.sort(reverse=True, key=lambda x: x[0])
-    top = scored[:limit]
+        # Keep the higher score if duplicate
+        if cve_id not in scored or score > scored[cve_id]["score"]:
+            scored[cve_id] = {
+                "score": score,
+                "item": item
+            }
+
+    # Sort by score descending
+    top = sorted(scored.values(), key=lambda x: x["score"], reverse=True)[:limit]
 
     results = []
-    for score, item in top:
+    for entry in top:
+        score = entry["score"]
+        item = entry["item"]
         cve = item["cve"]
         results.append({
             "cve_id": cve["id"],
@@ -82,7 +91,7 @@ def get_top_recent_cves(limit=10, days=30):
     return results
 
 if __name__ == "__main__":
-    top_cves = get_top_recent_cves(limit=25, days=30)
+    top_cves = get_top_recent_cves(limit=25, days=1)
 
     print("\n=== TOP RECENT CVEs ===\n")
     for v in top_cves:
