@@ -104,6 +104,28 @@ This script provides a more detailed analysis of ransomware attack data from a C
 - **Timeline Heatmap:** Creates a heatmap to visualize ransomware group activity over time.
 - **Customizable Plots:** Saves multiple plots for group, country, and industry distributions, as well as detection delay.
 
+### 6. Threat Actor Analysis
+
+#### `ransomware_attack_vector_analysis.py`
+
+This script analyzes ransomware group descriptions to identify common attack vectors. It uses NLP to parse descriptions and extracts vectors like phishing, RDP compromise, and software vulnerabilities.
+
+**Features:**
+
+- **Attack Vector Extraction:** Identifies and categorizes common ransomware attack vectors.
+- **Frequency Analysis:** Counts the occurrences of each attack vector.
+- **CSV Output:** Saves the results to `attack_vectors.csv`.
+
+#### `ransomware_motivation_analysis.py`
+
+This script analyzes the stated motivations of ransomware groups from their descriptions. It classifies motivations into categories like financial gain, data exfiltration, and disruption.
+
+**Features:**
+
+- **Motivation Classification:** Categorizes group motivations based on description keywords.
+- **Statistical Summary:** Provides a summary of the different motivations.
+- **CSV Output:** Saves the analysis to `ransomware_motivations.csv`.
+
 ## Setup and Installation
 
 1.  **Clone the repository:**
@@ -203,4 +225,15 @@ Run the scripts from your terminal, and they will prompt you for the required in
 - **Generate sector-specific CTI report:**
     ```bash
     python ransomware_sector_analysis_for_cti_report.py
+    ```
+
+### Threat Actor Analysis
+
+- **Analyze attack vectors:**
+    ```bash
+    python ransomware_attack_vector_analysis.py
+    ```
+- **Analyze motivations:**
+    ```bash
+    python ransomware_motivation_analysis.py
     ```
