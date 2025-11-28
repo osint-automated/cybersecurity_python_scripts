@@ -20,16 +20,6 @@ class RasomwareLiveAPI():
             description = item['description']
             rasomware_group = item['group']
 
-            #user can print to console if they wish
-
-            #print(f'Sector: {sector}')
-            #print(f'Victim: {victim}')
-            #print(f'Date: {date}')
-            #print(f'Claim URL: {claim_url}')
-            #print(f'Country: {country}')
-            #print(f'Description: {description}')
-            #print(f'Ransomware Group: {rasomware_group}\n')
-
         return response
     
     def ransomware_attack_sector_us(self, sector):
@@ -47,16 +37,6 @@ class RasomwareLiveAPI():
             description = item['description']
             rasomware_group = item['group']
 
-            #user can print to console if they wish
-
-            #print(f'Sector: {sector}')
-            #print(f'Victim: {victim}')
-            #print(f'Date: {date}')
-            #print(f'Claim URL: {claim_url}')
-            #print(f'Country: {country}')
-            #print(f'Description: {description}')
-            #print(f'Ransomware Group: {rasomware_group}\n')
-
         return response
     
     def ransomware_attack_sector_au(self, sector):
@@ -73,16 +53,6 @@ class RasomwareLiveAPI():
             country = item['country']
             description = item['description']
             rasomware_group = item['group']
-
-            #user can print to console if they wish
-
-            #print(f'Sector: {sector}')
-            #print(f'Victim: {victim}')
-            #print(f'Date: {date}')
-            #print(f'Claim URL: {claim_url}')
-            #print(f'Country: {country}')
-            #print(f'Description: {description}')
-            #print(f'Ransomware Group: {rasomware_group}\n')
 
         return response
 
