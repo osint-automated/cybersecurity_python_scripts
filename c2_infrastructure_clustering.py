@@ -1,3 +1,8 @@
+"""
+This script takes a domain or IP address and finds related infrastructure to cluster C2 infrastructure.
+It uses the VirusTotal API to find passive DNS resolutions, WHOIS information, and SSL certificate hashes.
+It then uses this information to build a graph of related infrastructure and identify clusters.
+"""
 import requests
 from collections import defaultdict
 import networkx as nx

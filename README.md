@@ -60,7 +60,29 @@ This script provides statistics on ransomware attacks, allowing you to query dat
 - **Statistical Analysis:** Get counts of ransomware incidents by industry sector or country.
 - **Trend Analysis:** Helps in understanding the distribution and focus of ransomware attacks.
 
-### 4. Infrastructure Analysis and Enumeration
+### 4. Top 25 Recent CVEs
+
+#### `top_25_recent_cves.py`
+
+This script fetches the 25 most recent CVEs from the National Vulnerability Database (NVD) and scores them based on CVSS score, presence in the CISA Known Exploited Vulnerabilities (KEV) catalog, and publication date.
+
+**Features:**
+
+- **Recent CVEs:** Fetches CVEs published in the last 30 days.
+- **Scoring:** Ranks CVEs based on a trend score.
+- **Output:** Prints the top 25 CVEs to the console.
+
+#### `top_25_recent_cves_keyword_search.py`
+
+This script fetches the 25 most recent CVEs that match a specific keyword. It scores each CVE based on its CVSS score, presence in the CISA KEV catalog, and publication date.
+
+**Features:**
+
+- **Keyword Search:** Filters CVEs by a user-provided keyword.
+- **Scoring:** Ranks CVEs based on a trend score.
+- **Output:** Prints the top 25 CVEs matching the keyword to the console.
+
+### 5. Infrastructure Analysis and Enumeration
 
 #### `asn_enumeration.py`
 
@@ -82,7 +104,7 @@ This script attempts to find connections between different indicators of comprom
 - **WHOIS Correlation:** Connects domains that share the same registration email.
 - **SSL/TLS Certificate Reuse:** Clusters IPs that have used the same SSL/TLS certificates.
 
-### 5. CTI Reports and Visualization
+### 6. CTI Reports and Visualization
 
 #### `ransomware_group_attack_analysis_for_cti_report.py`
 
@@ -104,7 +126,7 @@ This script provides a more detailed analysis of ransomware attack data from a C
 - **Timeline Heatmap:** Creates a heatmap to visualize ransomware group activity over time.
 - **Customizable Plots:** Saves multiple plots for group, country, and industry distributions, as well as detection delay.
 
-### 6. Threat Actor Analysis
+### 7. Threat Actor Analysis
 
 #### `ransomware_attack_vector_analysis.py`
 
@@ -203,6 +225,18 @@ Run the scripts from your terminal, and they will prompt you for the required in
 - **Get sector or country statistics:**
   ```bash
   python ransomwarelive_sector_country_search.py
+  ```
+
+### Top 25 Recent CVEs
+
+- **Get the top 25 recent CVEs:**
+  ```bash
+  python top_25_recent_cves.py
+  ```
+
+- **Search for CVEs by keyword:**
+  ```bash
+  python top_25_recent_cves_keyword_search.py
   ```
 
 ### Infrastructure Analysis and Enumeration

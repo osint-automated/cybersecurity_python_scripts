@@ -1,3 +1,8 @@
+"""
+This script searches for a specific ransomware group on ransomware.live and returns information about the group.
+The information includes the group's name, description, active .onion URLs, and the tools they use.
+The script then saves the information to a CSV file.
+"""
 import requests
 import pandas as pd
 

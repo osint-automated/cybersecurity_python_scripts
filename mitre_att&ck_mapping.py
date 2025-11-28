@@ -1,3 +1,9 @@
+"""
+This script takes a text file containing a cyber threat intelligence report and maps the text to the MITRE ATT&CK framework.
+It uses a combination of phrase matching and fuzzy string matching to identify techniques and tactics in the text.
+The script downloads the latest MITRE ATT&CK enterprise matrix from the MITRE CTI repository.
+The output is a CSV file containing a compact summary of the extracted TTPs, ordered by tactic.
+"""
 import os
 import sys
 import re

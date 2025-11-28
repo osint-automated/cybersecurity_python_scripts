@@ -1,3 +1,8 @@
+"""
+This script takes a CSV file of ransomware attack data and generates a CTI report.
+The report includes statistics on the number of attacks by group, country, and industry, as well as an analysis of the time it takes to detect and report a leak.
+The script also generates a series of charts to visualize the data.
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import os

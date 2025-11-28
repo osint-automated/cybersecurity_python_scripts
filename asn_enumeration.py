@@ -1,3 +1,8 @@
+"""
+This script takes an IP address or CIDR block and returns ASN information for each IP address.
+It uses the VirusTotal API to get the ASN information.
+It also flags high-risk ASNs based on a predefined list.
+"""
 import ipaddress
 import requests
 import os

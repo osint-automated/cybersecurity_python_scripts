@@ -1,3 +1,9 @@
+"""
+This script analyzes a CSV file of ransomware attack data to generate a CTI report.
+It provides a statistical overview of the attacks, including the number of attacks by group, country, and industry.
+It also calculates the detection delay and generates a timeline of group activity.
+The script saves several plots as images to visualize the data.
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns

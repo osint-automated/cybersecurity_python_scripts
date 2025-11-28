@@ -1,3 +1,8 @@
+"""
+This script searches for ransomware attacks in a specific sector and country on ransomware.live.
+It has separate functions for searching in the UK, US, and Australia.
+The script then saves the results to a CSV file for each country.
+"""
 import requests
 import pandas as pd
 
@@ -66,7 +71,7 @@ if __name__ == '__main__':
     print(f'CSV File created for UK {sector}')
 
     us_results = ransomware.ransomware_attack_sector_us(sector=sector)
-    us_df = pd.DataFrame(us_results)
+    us_df = pd..DataFrame(us_results)
     us_df.to_csv(f'{sector}_us.csv', index=False)
     print(f'CSV File created for US {sector}')
 

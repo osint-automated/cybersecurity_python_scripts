@@ -1,3 +1,8 @@
+"""
+This script analyzes a CSV file containing ransomware attack data to identify the primary and secondary attack vectors for each attack.
+It uses a keyword-based approach to score and classify attack types, and maps them to the MITRE ATT&CK framework.
+The script generates a new CSV file with the annotated attack vectors, as well as several summary files and charts.
+"""
 import re
 import os
 import ast

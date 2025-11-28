@@ -1,3 +1,9 @@
+"""
+This script extracts Indicators of Compromise (IOCs) from a log file and enriches them with data from various security APIs.
+It extracts IPs, domains, URLs, hashes, encoded PowerShell commands, file paths, and scheduled tasks.
+It then enriches the IOCs with data from AbuseIPDB, AlienVault OTX, and urlscan.io.
+The results are saved to a CSV file.
+"""
 import pandas as pd
 import re
 import os

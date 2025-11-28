@@ -1,3 +1,8 @@
+"""
+This script fetches the most recent CVEs from the National Vulnerability Database (NVD) and the CISA Known Exploited Vulnerabilities (KEV) catalog.
+It then scores each CVE based on its CVSS score, whether it is in the KEV catalog, and how recently it was published.
+The script then prints the top 25 most recent CVEs with their scores and other relevant information.
+"""
 import requests
 from datetime import datetime, timedelta, timezone
 

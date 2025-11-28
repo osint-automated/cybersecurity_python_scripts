@@ -1,3 +1,8 @@
+"""
+This script searches for victims of a specific ransomware group on ransomware.live.
+It takes a ransomware group as input and returns a list of victims.
+The script then saves the list of victims to a CSV file.
+"""
 import pandas as pd
 import requests
 

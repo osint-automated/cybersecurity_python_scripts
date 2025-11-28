@@ -1,3 +1,9 @@
+"""
+This script analyzes a CSV file of ransomware attack data to determine the motivation behind each attack.
+It uses a scoring system to rate each attack on a scale of 0-100 for financial gain, data theft, operational disruption, and opportunism.
+The script also enriches the data with industry-specific information to help determine the motivation.
+The results are saved to a new CSV file and a series of charts are generated to visualize the data.
+"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
