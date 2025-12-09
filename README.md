@@ -104,7 +104,19 @@ This script attempts to find connections between different indicators of comprom
 - **WHOIS Correlation:** Connects domains that share the same registration email.
 - **SSL/TLS Certificate Reuse:** Clusters IPs that have used the same SSL/TLS certificates.
 
-### 6. CTI Reports and Visualization
+### 6. Live Attack Surface Scanner (`live_attack_surface_scanner.py`)
+
+This script performs a live scan of a target (domain or IP address) to identify exposed services, analyze TLS certificates, and gather WHOIS information, ultimately calculating a risk score for the target's attack surface.
+
+**Features:**
+
+-   **Port Scanning:** Probes common CTI-relevant ports (SSH, HTTP, HTTPS, RDP, MySQL, PostgreSQL, Redis, Elasticsearch, FTP, SMTP) to identify open services.
+-   **TLS Certificate Analysis:** Extracts and displays TLS certificate details for HTTPS, including issuer, subject, validity period, and expiration status.
+-   **WHOIS Lookup:** Retrieves domain registration information such as registrar, country, contact emails, and name servers.
+-   **Risk Scoring:** Assigns a risk score (0-100) and level (LOW, MEDIUM, HIGH) based on exposed risky services, expired TLS certificates, and visible WHOIS contact information.
+-   **Detailed Output:** Provides a comprehensive summary of findings in both JSON and human-readable formats.
+
+### 7. CTI Reports and Visualization
 
 #### `ransomware_group_attack_analysis_for_cti_report.py`
 
@@ -126,7 +138,7 @@ This script provides a more detailed analysis of ransomware attack data from a C
 - **Timeline Heatmap:** Creates a heatmap to visualize ransomware group activity over time.
 - **Customizable Plots:** Saves multiple plots for group, country, and industry distributions, as well as detection delay.
 
-### 7. Threat Actor Analysis
+### 8. Threat Actor Analysis
 
 #### `ransomware_attack_vector_analysis.py`
 
@@ -248,6 +260,13 @@ Run the scripts from your terminal, and they will prompt you for the required in
 - **Cluster Infrastructure:**
     ```bash
     python c2_infrastructure_clustering.py
+    ```
+
+### Attack Surface Management
+
+- **Scan a target:**
+    ```bash
+    python live_attack_surface_scanner.py
     ```
 
 ### CTI Reports and Visualization
