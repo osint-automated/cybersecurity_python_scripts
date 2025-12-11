@@ -103,6 +103,10 @@ This script enriches an IP address or CIDR block by providing ASN (Autonomous Sy
 
 This script attempts to find connections between different indicators of compromise (IOCs) by clustering them based on shared infrastructure attributes.
 
+#### `ip_enrichment.py`
+
+This script enriches an IP address with threat intelligence, providing details such as geolocation, ASN, and known malicious activities.
+
 #### `redirect_chain_analyzer.py`
 
 This script analyzes the redirect chain of a given URL and displays the full path of redirects.
@@ -140,4 +144,5 @@ Example:
 python ioc_extraction_and_enrichment.py
 python mitre_att&ck_mapping.py
 python ransomware_live_ransomware_group_search.py
+python ip_enrichment.py
 ```
